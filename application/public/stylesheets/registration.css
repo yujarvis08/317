@@ -1,0 +1,56 @@
+h1{
+	padding: 30px;
+	margin: 30px;
+	color: #6441A4;
+}
+
+label{
+	padding: 30px;
+	color: white;
+}
+
+input{
+	margin: 2px;
+	border: 5px solid white;
+	border-radius: 30px;
+
+}
+
+p{
+	margin: 30px;
+}
+
+html{
+	background-color: #302e2e;
+	font-family: "Arial";
+}
+form{
+	border: none;
+	border-radius: 30px;
+}
+
+/* nav bar*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #6441A4;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}

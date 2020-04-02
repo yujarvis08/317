@@ -1,7 +1,30 @@
-body {
-  font-family: "Arial";
-  background-color: #302e2e;
+html{
+	background-color: #302e2e;
+	font-family: "Arial";
 }
+form{
+	border: none;
+	border-radius: 30px;
+}
+label{
+	padding: 30px;
+	color: white;
+}
+
+input{
+	margin: 2px;
+	border: 5px none white;
+	border-radius: 30px;
+
+}
+h1{
+	padding: 30px;
+	margin: 30px;
+	color: #6441A4;
+}
+
+/* nav bar*/
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -24,8 +47,4 @@ li a {
 
 li a:hover {
   background-color: #111;
-}
-
-h1 {
-	color: #6441A4;
 }
