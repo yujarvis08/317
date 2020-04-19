@@ -6,10 +6,13 @@
 <link rel = "stylesheet" type="text/css" href=" stylesheets/registration.css">
 
 <ul>
-  <li><a href="index">Home</a></li>
+  <li><a href="home">Home</a></li>
+  <li><a href="index">Index</a></li>
   <li><a href="login">Login</a></li>
   <li><a href="registration">Register</a></li>
   <li><a href="postimage">Post Image</a></li>
+  <li><a href="imagepage">Images</a></li>
+  <li><a href="logout">Log Out</a></li>
 </ul>
 
 <title>Registration</title>
@@ -20,18 +23,18 @@
 <body>
 
 
-<form> 
+<form action="users/register" method="POST" encType="x-www-form-urlencoded"> 
 	<label for="username">Username:</label>
-  	<input type="text"><br><br>
+  	<input id="username" name="username" type="text"><br><br>
 
   	<label for="email">Email:</label>
-  	<input type="email"><br><br>
+  	<input id="email" name="email" type="email"><br><br>
 
   	<label for="password">Password:</label>
-  	<input type="password"><br><br>
+  	<input id="password" name="password" type="password"><br><br>
 
   	<label for="cPassword">Confirm Password:</label>
-  	<input type="password"><br><br>
+  	<input id="password" name="password2" type="password"><br><br>
   
   	<label for="13yrplus">You are 13+ years of age</label>
   	<input type="checkbox"><br><br>
@@ -42,7 +45,7 @@
   	<label for="agreement">I agree to the Terms of Service</label>
   	<input type="checkbox"><br><br>
 
-  	<input type="submit" value="Submit">
+  	<input id="button" type="submit" value="Submit">
 </form>
 
 </body>
