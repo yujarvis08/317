@@ -1,6 +1,7 @@
 const express                = require('express');
 const router                 = express.Router();
 const UserController = require('../controller/users');
+const bcrypt = require('bcrypt');
 
 router.post('/register', function(req, res, next) {
 	UserController.createUser(req, res, next);

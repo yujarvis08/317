@@ -2,6 +2,7 @@ const errorPrint = require('../helpers/debug/debughelper').errorPrint;
 const successPrint = require('../helpers/debug/debughelper').successPrint;
 const UserError = require('../helpers/error/UserError');
 const UserModel = require('../model/users.js');
+const bcrypt = require('bcrypt');
 const UserController = {
     createUser: function(req, res, next) {
         let email                = req.body.email;
