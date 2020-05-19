@@ -2,16 +2,14 @@
 <html>
 
 <head>
-	<link rel =stylesheet type="text/css" href=" stylesheets/postimage.css"> 
+	<link rel =stylesheet type="text/css" href=" /public/stylesheets/postimage.css"> 
+	<script defer src="/public//javascripts/frontend.js"></script>
 
 <ul>
-  <li><a href="home">Home</a></li>
-  <li><a href="index">Index</a></li>
-  <li><a href="login">Login</a></li>
-  <li><a href="registration">Register</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="login" id="login" class= "nav-items anchor-buttons">Login</a></li>
+  <li><a href="register">Register</a></li>
   <li><a href="postimage">Post Image</a></li>
-  <li><a href="imagepage">Images</a></li>
-  <li><a href="logout">Log Out</a></li>
 </ul>
 
 	<title>Post images</title>
@@ -20,15 +18,34 @@
 <body>
 
 <h1>Post an Image</h1>
-<form> 
+<form 
+id="post-image" 
+class="form-grid-postimage" 
+action="/posts/createPost" 
+method="POST" 
+enctype="multipart/form-data"> 
+
  	<label for="postTitle">Title:</label>
- 	<input type="text"><br><br>
+ 	<input 
+ 	type="text"
+ 	id="title" 
+ 	class="text-input" 
+ 	placeholder="Put a title"
+ 	name="title"><br><br>
 
  	<label for="images">Post an Image:</label>
- 	<input type="file" accept="image/*"><br><br>
+ 	<input 
+ 	type="file" 
+ 	accept="image/*"
+ 	name="uploadImage"><br><br>
 
  	<label for="description">Post Description:</label>
- 	<input type="text"><br><br>
+ 	<input 
+ 	type="text" 
+ 	id="post-desc" 
+ 	class="text-input" 
+ 	placeholder="Put a description"
+ 	name="description"><br><br>
 
  	<label for="policy">Acceptable Use Policy</label>
  	<input type="checkbox"><br><br>

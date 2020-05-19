@@ -2,16 +2,14 @@
 <html>
 
 <head>
-<link rel =stylesheet type="text/css" href=" stylesheets/login.css">
+<link rel =stylesheet type="text/css" href=" /public/stylesheets/login.css">
+<script defer src="/public/javascripts/frontend.js"></script>
 
 <ul>
-  <li><a href="home">Home</a></li>
-  <li><a href="index">Index</a></li>
-  <li><a href="login">Login</a></li>
-  <li><a href="registration">Register</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="login" id="login" class= "nav-items anchor-buttons">Login</a></li>
+  <li><a href="register">Register</a></li>
   <li><a href="postimage">Post Image</a></li>
-  <li><a href="imagepage">Images</a></li>
-  <li><a href="logout">Log Out</a></li>
 </ul>
 
 	<title>Login</title>
@@ -21,12 +19,12 @@
 
 <body>
 
-<form action="users/login" method="POST" encType="x-www-form-urlencoded"> 
+<form action="users/login" method="POST" encType="application/x-www-form-urlencoded"> 
   <label for="username">Username:</label>
-  <input id="username" type="text"><br><br>
+  <input id="username" name ="username" placeholder="Username" required type="text"><br><br>
 
   <label for="password">Password:</label>
-  <input id="password" type="password"><br><br>
+  <input id="password" name="password" required type="password"><br><br>
 
   <input id="button" type="submit" value="Submit">
 </form>

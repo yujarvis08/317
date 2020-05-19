@@ -24,37 +24,59 @@ li a:hover {
   background-color: #111;
 }
 
-.grid-container {
-  display: grid;
-  height: 80vh;
-  margin: 100px 500px 100px;
-  grid-template-rows: 75px 800px 200px;
-  grid-template-columns: 1fr;
-
-}
-.site-header {
-  background-color: #6441A4;
-  grid-area: 1 / 1;
-}
-.footer {
-  background-color: white;
-  grid-area: 3 / 1;
-}
-
-.content {
-  background-color: black;
-  grid-area: 2 / 1;
-}
-
-@media screen and (max-width: 500px) {
-  .grid-container {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: .15em;
-  }
-}
-
 html {
   background-color: #302e2e;
   font-family: "Arial";
+}
+
+.info-container > div {
+  background-color: black;
+  font-family: "Arial";
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  margin-left: 100px;
+  margin-right: 100px;
+  
+}
+
+.title-container > header {
+  background-color: #6441A4;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+  
+}
+
+.img-container > img {
+  display: block;
+  width: 50%;
+  background-color: white;
+  text-align: center;
+  padding: 300px 0;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.comment-container > div {
+  text-align: left;
+  font-size: 30px;
+	margin-left: 100px;
+}
+.comment-container > header {
+  color:white;
+  padding: 20px 0;
+  font-size: 15px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.comment-container > textarea {
+
+  padding: 20px 0;
+  width: 300px
+  margin-left: 100px;
+  margin-right: 100px;
 }

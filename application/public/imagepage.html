@@ -1,28 +1,62 @@
 <!DOCTYPE html>
-<html lang='en'>
+
 <head>
-	<link rel="stylesheet" href="/stylesheets/image.css">
+	<link rel="stylesheet" href="/public/stylesheets/image.css">
+	<script defer src="/public/javascripts/frontend.js"></script>
 
 <ul>
-  <li><a href="home">Home</a></li>
-  <li><a href="index">Index</a></li>
-  <li><a href="login">Login</a></li>
-  <li><a href="registration">Register</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="login" id="login" class= "nav-items anchor-buttons">Login</a></li>
+  <li><a href="register">Register</a></li>
   <li><a href="postimage">Post Image</a></li>
-  <li><a href="imagepage">Images</a></li>
-  <li><a href="logout">Log Out</a></li>
 </ul>
 
 </head>
 
 <body>
+    
+  <div class="title-container">
+    <header id="title">
+      <h2 id="post-title"></h2>
+    </header>
 
-<div class="grid-container">
-	<header class="site-header">Img Title</header>
-	<div class="content">Content</div>
-	<footer class="footer">Comments</footer>
-</div>
+  </div>
 
+  <div class ="info-container">
+        <div id="image-post-author" class="info-tags"></div>
+    <div id="image-post-date" class="info-tags"></div>
+    <div id="image-post-desc" class="info-tags"></div>
+  </div>
+  <div class="img-container">
+    <img id="post-image" src="">
+  </div>
+  <div class="comment-container">
+    <header id="comment-title">
+      <h2>Comments</h2>
+    </header>
+
+    <div id="comment-box">
+      <textarea id="comment-text"></textarea>
+  </div>
+
+<script>
+  let url = document.URL.split('/');
+  let _id = url[url.length-1];
+  let postURL = "http://localhost:3000/posts/getPostById/" + _id;
+  
+  fetch(postURL)
+    .then((data) => data.json())
+    .then((dataAsObject) => {
+      console.log(dataAsObject);
+      console.log(dataAsObject.photopath);
+      document.getElementById('image-post-author').textContent = dataAsObject.username;
+      document.getElementById('image-post-date').textContent = dataAsObject.created;
+      document.getElementById('image-post-desc').textContent = dataAsObject.description;
+      document.getElementById('post-title').textContent = dataAsObject.title;
+      document.getElementById('post-image').setAttribute('src', "http://localhost:3000/" + dataAsObject.photopath);
+    })
+
+</script>
 </body>
 
 </html>

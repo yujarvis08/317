@@ -1,22 +1,65 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/public/stylesheets/style.css">
+  <script defer src="/public/javascripts/frontend.js"></script>
 
   <ul>
-  <li><a href="index">Home</a></li>
-  <li><a href="login">Login</a></li>
-  <li><a href="registration">Register</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="login" id="login" class= "nav-items anchor-buttons">Login</a></li>
+  <li><a href="register">Register</a></li>
   <li><a href="postimage">Post Image</a></li>
-  <li><a href="imagepage">Images</a></li>
-  <li><a href="logout">Log Out</a></li>
+  <li><input id="search-text" name="search-text" type="text" placeholder="Search.."></li>
+  <div id="text-bar-icon">
+    <i id="sicon" class="fas fa-search nav-items">Go</i>
+  </div>
 </ul>
 
   <h1>Home</h1>
+  <div id="main-content" class='main-content'>
+  </div>
 </head>
 
 <body>
 
 </body>
+<script>
+  function createCard(data) {
+    return `<div id=post-${data.id} class="card"> \
+      <img class="card-image" src="${data.thumbnail}"> \
+      <p class="card-body"> \
+        <p class="card-title">${data.title} \
+          <p class="card-text">${data.description} \
+            <p><a href="/posts/imagepage/${data.id}" class="anchor-buttons">Details</a></p> \
+            </div> \
+            </div>`;
 
+  }
+  function runSearch() {
+    let searchTerm = document.getElementById('search-text').value;
+    let searchURL = "http://localhost:3000/posts/search/" + searchTerm;
+    fetch(searchURL)
+    .then((data) => data.json())
+    .then((dataAsObject) => {
+      let _html = "";
+      dataAsObject.forEach((post) => {
+        _html += createCard(post);
+      })
+      document.getElementById('main-content').innerHTML = _html;
+    })
+    .catch((err) = console.log(err));
+  }
+  document.getElementById('text-bar-icon').onclick = runSearch;
+
+    fetch("http://localhost:3000/posts/getRecentPosts/")
+    .then((data) => data.json())
+    .then((dataAsObject) => {
+      let _html = "";
+      dataAsObject.forEach((post) => {
+        _html += createCard(post);
+      })
+      document.getElementById('main-content').innerHTML = _html;
+    })
+    .catch((err) => console.log(err));
+</script>
 </html>

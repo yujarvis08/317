@@ -27,5 +27,19 @@ li a:hover {
 }
 
 h1 {
-	color: #6441A4;
+  color: #6441A4;
+  font-size: 50px;
+}
+
+.main-content > div {
+  display: grid;
+  grid-template-columns: 1;
+  border: solid  #6441A4 50px;
+  border-radius: 75px;
+  font-size: 25px;
+  font-family: "Arial";
+  color: white;
+  grid-gap: 10px;
+  background-color: #302e2e;
+  padding: 100px;
 }
